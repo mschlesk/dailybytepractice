@@ -13,24 +13,39 @@ Ex: Given the following strings...
 */
 
 func reverse(s string) string {
-	return ""
+	if s == "" {
+		return ""
+	}
+
+	rs := make([]byte, len(s))
+	for i := 0; i < len(s); i++ {
+		rs[i] = s[len(s)-i-1]
+	}
+
+	return string(rs)
 }
 
 // Test runs given and extracurricular test cases against proposed solution
 func Test() bool {
+	tests := map[string]string{
+		"Cat":            "taC",
+		"The Daily Byte": "etyB yliaD ehT",
+		"civic":          "civic",
+		"":               "",
+	}
+
 	pass := true
-	tests := map[string]string{"Cat": "taC", "The Daily Byte": "etyB yliaD ehT", "civic": "civic"}
-
 	for test, expected := range tests {
-		fmt.Printf("\treverse(%s) == %s?", test, expected)
+		fmt.Printf("\treverse(\"%s\") == \"%s\"?", test, expected)
 
-		if reverse(test) == expected {
-			fmt.Println(" ✔️")
+		actual := reverse(test)
+		if actual == expected {
+			fmt.Println(" ✅")
 		} else {
-			fmt.Println(" ❌")
+			fmt.Printf(" ❌\n\tReceived %s\n", actual)
 			pass = false
 		}
-
 	}
+
 	return pass
 }
