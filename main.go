@@ -6,11 +6,15 @@ import (
 	"github.com/mschlesk/dailybytepractice/pkg/reversestring"
 )
 
+var result bool
+
 func main() {
-	m := map[bool]string{true: "Pass", false: "Fail"}
+	m := map[bool]string{true: "✔️", false: "❌"}
 
 	welcome := "=== DailyBytes Runner ===\n"
 	fmt.Println(welcome)
 
-	fmt.Printf("Running reverse byte tests... %s\n", m[reversestring.Test()])
+	fmt.Println("Running reverse byte tests...")
+	result = reversestring.Test()
+	fmt.Printf("Results: %s\n\n", m[result])
 }
