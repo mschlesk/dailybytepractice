@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/mschlesk/dailybytepractice/pkg/reversebyte"
+	"github.com/mschlesk/dailybytepractice/pkg/reversestring"
 )
 
 func main() {
@@ -12,5 +12,5 @@ func main() {
 	welcome := "=== DailyBytes Runner ===\n"
 	fmt.Println(welcome)
 
-	fmt.Printf("Running reverse byte tests... %s\n", m[reversebyte.Test()])
+	fmt.Printf("Running reverse byte tests... %s\n", m[reversestring.Test()])
 }
