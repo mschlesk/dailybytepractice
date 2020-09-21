@@ -9,12 +9,12 @@ import (
 var result bool
 
 func main() {
-	m := map[bool]string{true: "✔️", false: "❌"}
+	m := map[bool]string{true: "✅", false: "❌"}
 
 	welcome := "=== DailyBytes Runner ===\n"
 	fmt.Println(welcome)
 
-	fmt.Println("Running reverse byte tests...")
+	fmt.Println("Running reversestring tests...")
 	result = reversestring.Test()
 	fmt.Printf("Results: %s\n\n", m[result])
 }
