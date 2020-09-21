@@ -1,8 +1,16 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/mschlesk/dailybytepractice/pkg/reversebyte"
+)
 
 func main() {
-	welcome := "=== DailyBytes Runner ==="
+	m := map[bool]string{true: "Pass", false: "Fail"}
+
+	welcome := "=== DailyBytes Runner ===\n"
 	fmt.Println(welcome)
+
+	fmt.Printf("Running reverse byte tests... %s\n", m[reversebyte.Test()])
 }
